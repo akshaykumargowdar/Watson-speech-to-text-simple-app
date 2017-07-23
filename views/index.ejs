@@ -1,0 +1,30 @@
+<html>
+	<head>
+	<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">   
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"> </script>
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"> </script>
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.js"> </script>
+		<script type="text/javascript" src="../javascripts/watson-speech.min.js"></script>
+		<script type="text/javascript" src="../javascripts/stt_WSTT.js"></script>
+	</head>
+	
+	<body ng-app="myApp" ng-controller="mycontroller">
+		<textarea id="status_message" rows="20" cols="100" ng-model="data"> </textarea>
+		<button id="speech" type=" button" ng-click="sttfunc()"> speak </button>
+	</body>
+
+	<script>
+		var app = angular.module("myApp",['ngRoute']);
+		app.controller('mycontroller', function($scope,$http) {
+		
+		$scope.sttfunc = function()
+	{
+		startListening(function() {
+				  
+			});
+	}
+		});
+	</script>	
+</html>
